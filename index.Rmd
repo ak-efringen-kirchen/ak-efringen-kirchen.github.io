@@ -2,12 +2,13 @@
 title: "Termine"
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE,message=FALSE}
+library(htmlTable)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r data_get}
+```{r data_get,echo=FALSE}
 dat.term<-read.csv("Termine.csv",header = TRUE)
 dat.term<-data.frame(dat.term)
-dat.term
+htmlTable(dat.term)
 ```
