@@ -1,22 +1,16 @@
 ---
-title: "Termine"
+title: "AK Efringen-Kirchen: Termine"
 ---
 
 ```{r setup, include=FALSE,message=FALSE}
 library(htmlTable)
 library(dplyr)
+library(DT)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r data_get,echo=FALSE}
 dat.term<-read.csv("Termine.csv",header = TRUE)
 dat.term<-data.frame(dat.term)
-dat.term %>%
-        htmlTable(
-                 align="l",
-                 align.header="l",
-                 rnames=FALSE,
-                 ctable = TRUE,
-                 css.cell = "width: 100pt, 150pt 250pt, 150pt, border: 12pt")
-
+datatable(dat.term)
 ```
