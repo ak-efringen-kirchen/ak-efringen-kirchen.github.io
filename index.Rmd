@@ -1,0 +1,13 @@
+---
+title: "Termine"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r data_get}
+dat.term<-read.csv("Termine.csv",header = TRUE)
+dat.term<-data.frame(dat.term)
+dat.term
+```
