@@ -12,5 +12,5 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r data_get,echo=FALSE}
 dat.term<-read.csv("Termine.csv",header = TRUE)
 dat.term<-data.frame(dat.term)
-datatable(dat.term)
+datatable(dat.term, escape=FALSE, rownames = FALSE)
 ```
