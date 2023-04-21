@@ -1,16 +1,24 @@
 ---
-title: "AK Efringen-Kirchen: Termine"
+title: "Aktionsprogramm Efringen-Kirchen: Termine"
 ---
 
 ```{r setup, include=FALSE,message=FALSE}
-library(htmlTable)
 library(dplyr)
 library(DT)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r out.width="10%",fig.align="left",echo=FALSE}
+knitr::include_graphics("agenda.png")
+```
+
 ```{r data_get,echo=FALSE}
 dat.term<-read.csv("Termine.csv",header = TRUE)
 dat.term<-data.frame(dat.term)
-datatable(dat.term, escape=FALSE, rownames = FALSE)
+dat.term$Webseite<-ifelse(dat.term$Web=="", "", paste0('<a href="',dat.term$Web,'">',dat.term$Web,"</a>"))
+dat.fin<-subset(dat.term,select=c(Datum,Bis,Ort,Details,Organisator,Webseite))
+datatable(dat.fin, escape=FALSE, rownames = FALSE,
+          extensions = 'Buttons',
+          options = list(dom = 'Bfrtip', 
+                         buttons = c('copy', 'pdf', 'print')))
 ```
