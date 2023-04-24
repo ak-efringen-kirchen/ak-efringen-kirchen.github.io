@@ -17,8 +17,21 @@ dat.term<-read.csv("Termine.csv",header = TRUE)
 dat.term<-data.frame(dat.term)
 dat.term$Webseite<-ifelse(dat.term$Web=="", "", paste0('<a href="',dat.term$Web,'">',dat.term$Web,"</a>"))
 dat.fin<-subset(dat.term,select=c(Datum,Bis,Ort,Details,Organisator,Webseite))
-datatable(dat.fin, escape=FALSE, rownames = FALSE,
+dat.ver<-read.csv("Veranstaltungen.csv",header = TRUE)
+dat.ver<-data.frame(dat.ver)
+dat.ver$Webseite<-ifelse(dat.ver$Web=="", "", paste0('<a href="',dat.ver$Web,'">',dat.ver$Web,"</a>"))
+dat.finver<-subset(dat.ver,select=c(Zeit,Aktion,Organisator,Webseite))
+
+datatable(dat.fin, escape=FALSE ,rownames = FALSE,
           extensions = 'Buttons',
-          options = list(dom = 'Bfrtip', 
+          options = list(dom = 'Bfrtip',paging=FALSE, 
+                         buttons = c('copy', 'pdf', 'print')))
+```
+
+# Weitere Veranstaltungen
+```{r data_other,echo=FALSE}
+datatable(dat.finver, escape=FALSE, rownames = FALSE,
+          extensions = 'Buttons',
+          options = list(dom = 'Bfrtip', paging=FALSE,
                          buttons = c('copy', 'pdf', 'print')))
 ```
