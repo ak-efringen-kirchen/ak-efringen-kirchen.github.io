@@ -8,7 +8,7 @@ library(DT)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r out.width="10%",fig.align="left",echo=FALSE}
+```{r out.width="90%",fig.align="left",echo=FALSE}
 knitr::include_graphics("logo2024.png")
 ```
 
