@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r out.width="10%",fig.align="left",echo=FALSE}
-knitr::include_graphics("agenda.png")
+knitr::include_graphics("logo2024.png")
 ```
 
 ```{r data_get,echo=FALSE}
