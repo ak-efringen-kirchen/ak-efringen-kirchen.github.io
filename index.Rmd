@@ -6,6 +6,11 @@ title: "Aktionsprogramm Efringen-Kirchen: Termine"
 library(dplyr)
 library(DT)
 knitr::opts_chunk$set(echo = TRUE)
+
+#Create myheader.html
+fileConn <- file("myheader.html")
+writeLines('<title>Agenda 2030 Efringen-Kirchen Global denken, lokal handeln</title>', fileConn)
+close(fileConn)
 ```
 
 ```{r out.width="90%",fig.align="left",echo=FALSE}
