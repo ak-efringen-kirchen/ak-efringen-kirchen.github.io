@@ -1,5 +1,7 @@
 ---
-title: "Aktionsprogramm Efringen-Kirchen: Termine"
+title: "Agenda 2030: Efringen-Kirchen: Termine"
+subtitle: "„Das zu Tuende: für eine nachhaltige Zukunft – 
+sozial, ökonomisch, ökologisch"
 ---
 
 ```{r setup, include=FALSE,message=FALSE}
